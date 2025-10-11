@@ -15,6 +15,10 @@
     <div class="container-fluid row">
         <form class="col-4 p-3">
                 <legend class="text-center text-secundary">Ingreso de socios</legend>
+                <?php
+                include "Modelo/conexion.php";
+                include "Controlador/registro_socios.php";
+                ?>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Nombre completo</label>
                     <input type="text" id="disabledTextInput" class="form-control" name="nombre">
@@ -57,7 +61,7 @@
                         <option>Cupo</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="submit" class="btn btn-primary" name="boton_registro" value="ok">Registrar</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
