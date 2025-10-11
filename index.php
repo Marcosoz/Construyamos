@@ -13,12 +13,16 @@
 <body>
     <h1 class="text-center p-3">Socios</h1>
     <div class="container-fluid row">
-        <form class="col-4 p-3">
-                <legend class="text-center text-secundary">Ingreso de socios</legend>
+        <form class="col-4 p-3" method="POST">
+                <h3 class="text-center text-secundary">Ingreso de socios</h3>
                 <?php
                 include "Modelo/conexion.php";
                 include "Controlador/registro_socios.php";
                 ?>
+                <div class="mb-3">
+                    <label for="disabledTextInput" class="form-label">CooperativaID</label>
+                    <input type="text" id="disabledTextInput" class="form-control" name="cooperativaID">
+                </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Nombre completo</label>
                     <input type="text" id="disabledTextInput" class="form-control" name="nombre">
@@ -43,25 +47,28 @@
                     <label for="disabledTextInput" class="form-label">Fecha de ingreso</label>
                     <input type="date" id="disabledTextInput" class="form-control" name="fecha_ingreso">
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" name="socio_si">
+<!--                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="checkDefault" name="socio_si[]">
                     <label class="form-check-label" for="checkDefault">
                         Socio Si
                     </label>
-                </div>
+                </div> -->
                 <div class="mb-3">
                     <label for="disabledSelect" class="form-label">Nivel de usuario</label>
                     <select id="disabledSelect" class="form-select" name="nivel_usuario">
-                        <option>Nivel de usuario</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Socio">socio</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="disabledSelect" class="form-label">Cupo</label>
                     <select id="disabledSelect" class="form-select" name="cupo">
-                        <option>Cupo</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary" name="boton_registro" value="ok">Registrar</button>
+                <button type="submit" class="btn btn-primary" name="btn_registro" value="ok">Registrar</button>
         </form>
         <div class="col-8 p-4">
             <table class="table">
