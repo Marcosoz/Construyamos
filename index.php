@@ -14,7 +14,7 @@
     <h1 class="text-center p-3">Socios</h1>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">
-                <h3 class="text-center text-secundary">Ingreso de socios</h3>
+                <h3 class="text-center alert alert-secondary">Ingreso de socios</h3>
                 <?php
                 include "Modelo/conexion.php";
                 include "Controlador/registro_socios.php";
@@ -86,7 +86,7 @@
                 <tbody>
                     <?php
                     include "modelo/conexion.php";
-                    $sql = $conexion->query("SELECT nombre_completo, cedula, telefono, email, fecha_ingreso, cupo FROM socios");
+                    $sql = $conexion->query("SELECT id, nombre_completo, cedula, telefono, email, fecha_ingreso, cupo FROM socios");
                     while ($datos = $sql->fetch_object()) { ?>
                         <tr>
                             <td><?= $datos->nombre_completo ?></td>
@@ -96,13 +96,13 @@
                             <td><?= $datos->fecha_ingreso ?></td>
                             <td><?= $datos->cupo ?></td>
                             <td>
-                                <a href="" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a>
+                                <!-- Notar la variable id que viene de datos, queda creada en el momento de llamar al boton -->
+                                <a href="modificar_socios.php?id=<?= $datos->id ?>" class="btn btn-small btn-warning"><i class="fa-solid fa-user-pen"></i></a>
                             </td>
                         </tr>
                     <?php
                     }
                     ?>
-
                 </tbody>
             </table>
         </div>
