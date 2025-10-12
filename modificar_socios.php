@@ -80,8 +80,8 @@ $sql = $conexion->query("SELECT id, cooperativa_id, nombre_completo, cedula, tel
             ?>
 
             <button type="submit" class="btn btn-success" name="btn_editar_socio" value="ok">Aceptar</button>
-            <a href="index.php">
-                <button class="btn btn-danger" name="btn_editar_socio" value="ok">Cancelar</button>
+            <a href="socios.php">
+                <button class="btn btn-danger" name="btn_editar_socio" value="ok">Cancelar</button> <!-- Boton realizado dentro del enlace -->
             </a>
         </form>
 </body>

@@ -29,7 +29,7 @@ if (!empty($_POST["btn_editar_socio"])) {
         // NOTA: Se elimina socio_si para hacer pruebas porque no funciona
         $sql = $conexion->query(" UPDATE socios SET cooperativa_id=$cooperativaID, nombre_completo='$nombre', cedula='$documento', telefono='$telefono', email='$email', contraseña='$clave', fecha_ingreso='$fecha_ingreso', nivel_usuario='$nivel_usuario', cupo=$cupo WHERE id=$id " );
         if ($sql == 1) {
-            header("location:index.php");
+            header("location:socios.php");
         } else {
             echo '<div class="alert alert-danger">Error al modificar socio</div>';
         }
