@@ -13,7 +13,7 @@
 <body>
     <h1 class="text-center p-3">Socios</h1>
     <div class="container-flex">
-        <a class="btn btn-primary" href="index.html" role="button">Inicio</a>
+        <a class="btn btn-primary" href="home.html" role="button">Inicio</a>
     </div>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">
@@ -59,8 +59,8 @@
                 <div class="mb-3">
                     <label for="disabledSelect" class="form-label">Nivel de usuario</label>
                     <select id="disabledSelect" class="form-select" name="nivel_usuario">
-                        <option value="Administrador">Administrador</option>
-                        <option value="Socio">socio</option>
+                        <option value="1">Administrador</option>
+                        <option value="2">socio</option>
                     </select>
                 </div>
                 <div class="mb-3">
