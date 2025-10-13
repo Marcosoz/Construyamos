@@ -13,7 +13,7 @@
 <body>
     <h1 class="text-center p-3">Socios</h1>
     <div class="container-flex">
-        <a class="btn btn-primary" href="home.html" role="button">Inicio</a>
+        <a class="btn btn-primary" href="home.php" role="button">Inicio</a>
     </div>
     <div class="container-fluid row">
         <form class="col-4 p-3" method="POST">

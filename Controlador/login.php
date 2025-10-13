@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 if (!empty($_POST["btn_ingresar"])) {
     if (empty($_POST["usuario"]) and empty($_POST["password"])) {
@@ -6,14 +6,17 @@ if (!empty($_POST["btn_ingresar"])) {
     } else {
         $usuario = $_POST["usuario"];
         $clave = hash('sha512', $_POST["password"]);
-        $sql = $conexion->query(" SELECT nombre_completo, contraseña FROM socios WHERE nombre_completo='$usuario' and contraseña='$clave' ");
+        $sql = $conexion->query(" SELECT * FROM socios WHERE nombre_completo='$usuario' and contraseña='$clave' ");
         if ($datos = $sql->fetch_object()) {
-            header("location:home.html");
+            //guardamos datos de la db para usar en funciones en otras paginas
+            $_SESSION['id']=$datos->id;
+            $_SESSION['nombre']=$datos->nombre_completo;
+            $_SESSION['cooperativa_id']=$datos->cooperativa_id;
+            header("location: home.php");
         } else {
             echo '<div class="alert alert-danger">Acceso Denegado</div>';
-            echo $clave;
         }
-
     }
 }
+
 ?>

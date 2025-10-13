@@ -1,3 +1,9 @@
+<?php session_start();
+if (empty($_SESSION['id'])){
+    header('location: index.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="assets-index/css/styles.css">
 
-    <title>Sidebar sub menus</title>
+    <title>Construyamos</title>
 </head>
 
 <body id="body-pd">
@@ -17,7 +23,10 @@
             <div>
                 <div class="nav__brand">
                     <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
-                    <a href="#" class="nav__logo">Usuario</a>
+                    <a href="#" class="nav__logo"></a>
+                    <?php
+                    echo $_SESSION['nombre'];
+                    ?>
                 </div>
                 <div class="nav__list">
                     <a href="#" class="nav__link active">
@@ -74,9 +83,9 @@
                 </div>
             </div>
 
-            <a href="#" class="nav__link">
+            <a href="controlador/logout.php" class="nav__link">
                 <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                <span class="nav__name">Log Out</span>
+                <span class="nav__name">Cerrar Sesion</span>
             </a>
         </nav>
     </div>
