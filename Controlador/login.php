@@ -8,7 +8,7 @@ if (!empty($_POST["btn_ingresar"])) {
         $clave = $_POST["password"];
         $sql = $conexion->query(" SELECT nombre_completo, contraseña FROM socios WHERE nombre_completo='$usuario' and contraseña='$clave' ");
         if ($datos = $sql->fetch_object()) {
-            header("location:index.php");
+            header("location:index.html");
         } else {
             echo '<div class="alert alert-danger">Acceso Denegado</div>';
         }
