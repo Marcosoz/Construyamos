@@ -13,7 +13,7 @@ if (!empty($_POST["btn_editar_socio"])) {
         $documento = $_POST["documento"];
         $telefono = $_POST["telefono"];
         $email = $_POST["email"];
-        $clave = $_POST["clave"];
+        $clave = hash('sha512', $_POST["clave"]);
         $fecha_ingreso = $_POST["fecha_ingreso"];
         // $socio_si = $_POST["socio_si"];
         $nivel_usuario = $_POST["nivel_usuario"];
