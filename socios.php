@@ -22,10 +22,10 @@
                 include "Modelo/conexion.php";
                 include "Controlador/registro_socios.php";
                 ?>
-                <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">CooperativaID</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="cooperativaID">
-                </div>
+                <!--<div class="mb-3">
+                    <label for="disabledTextInput" class="form-label" hidden>CooperativaID</label>
+                    <input type="hidden" id="disabledTextInput" class="form-control" name="cooperativaID">
+                </div>-->
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Nombre completo</label>
                     <input type="text" id="disabledTextInput" class="form-control" name="nombre">
