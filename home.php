@@ -1,5 +1,5 @@
 <?php session_start();
-if (empty($_SESSION['id'])){
+if (empty($_SESSION['id'])) {
     header('location: index.php');
 }
 ?>
@@ -13,6 +13,7 @@ if (empty($_SESSION['id'])){
 
     <!-- ===== CSS ===== -->
     <link rel="stylesheet" href="assets-index/css/styles.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Construyamos</title>
 </head>
@@ -90,7 +91,21 @@ if (empty($_SESSION['id'])){
         </nav>
     </div>
 
-    <h1>Componentes</h1>
+    <style> /* cuando haya tiempo pasar a style.css clase imgconstruyamos*/
+        body {
+            /* La ruta a tu imagen */
+            background-image: url('img/construyamos.jpg');
+            /* Ajusta el tamaño para que cubra toda la pantalla */
+            background-size: cover;
+            /* Evita que la imagen se repita */
+            background-repeat: no-repeat;
+            /* Centra la imagen */
+            background-position: center;
+            /* Fija la imagen al hacer scroll */
+            background-attachment: fixed;
+        }
+    </style>
+
     <!-- ===== IONICONS ===== -->
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 

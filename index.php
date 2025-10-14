@@ -15,14 +15,13 @@
 </head>
 
 <body>
-    <img class="wave" src="img/wave.png">
+    <!--<img class="wave" src="img/wave.png">-->
     <div class="container">
         <div class="img">
-            <img src="img/bg.svg">
+            <img src="img/construyamos.jpg">
         </div>
         <div class="login-content">
             <form method="post" action="">
-                <img src="img/avatar.svg">
                 <h2 class="title">BIENVENIDO</h2>
                 <?php
                 include("modelo/conexion.php");
