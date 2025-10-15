@@ -1,3 +1,26 @@
+<?php
+include "Modelo/conexion.php";
+include "Controlador/registro_socios.php";
+
+$coopID = $_SESSION["cooperativa_id"];
+
+// Usamos prepared statements para evitar inyecciones SQL
+$stmt = $conexion->prepare("SELECT numero_cupos FROM cooperativas WHERE id = ?");
+$stmt->bind_param("i", $coopID);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Si encontramos la cooperativa
+if ($fila = $result->fetch_assoc()) {
+    // Guardamos el número de cupos en una variable
+    $numeroCupos = $fila["numero_cupos"];
+} else {
+    echo "No se encontró la cooperativa.";
+}
+$stmt->close();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,19 +37,14 @@
 <body>
     <h1 class="text-center p-3">Socios</h1>
     <div class="container-flex">
-        <a class="btn btn-primary" href="listadoSocios.php" role="button">Volver</a>
+        <a class="btn btn-primary" href="socios.php" role="button">Volver</a>
     </div>
     <div class="container-fluid row">
         <form class="col-4 p-3 m-auto" method="POST">
             <h3 class="text-center alert alert-secondary">Ingreso de socios</h3>
             <?php
-            include "Modelo/conexion.php";
-            include "Controlador/registro_socios.php";
+
             ?>
-            <!--<div class="mb-3">
-                    <label for="disabledTextInput" class="form-label" hidden>CooperativaID</label>
-                    <input type="hidden" id="disabledTextInput" class="form-control" name="cooperativaID">
-                </div>-->
             <div class="mb-3">
                 <label for="disabledTextInput" class="form-label">Nombre completo</label>
                 <input type="text" id="disabledTextInput" class="form-control" name="nombre">
@@ -67,9 +85,11 @@
             <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Cupo</label>
                 <select id="disabledSelect" class="form-select" name="cupo">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
+                    <?php
+                    for ($i = 1; $i <= $numeroCupos; $i++) {
+                        echo "<option value=$i>$i</option>";
+                    }
+                    ?>
                 </select>
             </div>
             <button type="submit" class="btn btn-primary" name="btn_registro" value="ok">Registrar</button>

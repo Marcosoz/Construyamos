@@ -22,37 +22,37 @@ $sql = $conexion->query("SELECT id, cooperativa_id, nombre_completo, cedula, tel
     <div class="container-fluid row">
         <form class="col-4 p-3 m-auto" method="POST">
             <h3 class="text-center alert alert-secondary">Modificar Socios</h3>
-            <input type="hidden" name="id" value="<?= $_GET["id"]?>">
+            <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
             <?php
 
             while ($datos = $sql->fetch_object()) { ?>
                 <div class="mb-3">
-                    <label for="disabledTextInput" class="form-label">CooperativaID</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="cooperativaID" value="<?= $datos->cooperativa_id?>">
+                    <label for="disabledTextInput" class="form-label" hidden>Cooperativa ID</label>
+                    <input type="hidden" id="disabledTextInput" class="form-control" name="cooperativaID" value="<?= $datos->cooperativa_id ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Nombre completo</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="nombre" value="<?= $datos->nombre_completo?>">
+                    <input type="text" id="disabledTextInput" class="form-control" name="nombre" value="<?= $datos->nombre_completo ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Documento</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="documento" value="<?= $datos->cedula?>">
+                    <input type="text" id="disabledTextInput" class="form-control" name="documento" value="<?= $datos->cedula ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Telefono</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="telefono" value="<?= $datos->telefono?>">
+                    <input type="text" id="disabledTextInput" class="form-control" name="telefono" value="<?= $datos->telefono ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Email</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="email" value="<?= $datos->email?>">
+                    <input type="text" id="disabledTextInput" class="form-control" name="email" value="<?= $datos->email ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Clave de acceso</label>
-                    <input type="text" id="disabledTextInput" class="form-control" name="clave" value="<?= $datos->contraseña?>">
+                    <input type="text" id="disabledTextInput" class="form-control" name="clave" value="<?= $datos->contraseña ?>">
                 </div>
                 <div class="mb-3">
                     <label for="disabledTextInput" class="form-label">Fecha de ingreso</label>
-                    <input type="date" id="disabledTextInput" class="form-control" name="fecha_ingreso" value="<?= $datos->fecha_ingreso?>">
+                    <input type="date" id="disabledTextInput" class="form-control" name="fecha_ingreso" value="<?= $datos->fecha_ingreso ?>">
                 </div>
                 <!--                <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="checkDefault" name="socio_si[]" value="">
@@ -62,14 +62,14 @@ $sql = $conexion->query("SELECT id, cooperativa_id, nombre_completo, cedula, tel
                 </div> -->
                 <div class="mb-3">
                     <label for="disabledSelect" class="form-label">Nivel de usuario</label>
-                    <select id="disabledSelect" class="form-select" name="nivel_usuario" value="<?= $datos->nivel_usuario?>">
+                    <select id="disabledSelect" class="form-select" name="nivel_usuario" value="<?= $datos->nivel_usuario ?>">
                         <option value=1>Administrador</option>
                         <option value=2>socio</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="disabledSelect" class="form-label">Cupo</label>
-                    <select id="disabledSelect" class="form-select" name="cupo" value="<?= $datos->cupo?>">
+                    <select id="disabledSelect" class="form-select" name="cupo" value="<?= $datos->cupo ?>">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
